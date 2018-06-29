@@ -24,7 +24,8 @@ if [ ! -d "${REDIS_DIR}" ]; then
   CACHED_DOWNLOAD="${HOME}/cache/redis-${REDIS_VERSION}.tar.gz"
 
   mkdir -p "${HOME}/redis"
-  wget --continue --output-document "${CACHED_DOWNLOAD}" "http://download.redis.io/releases/redis-${REDIS_VERSION}.tar.gz"
+  # wget --continue --output-document "${CACHED_DOWNLOAD}" "http://download.redis.io/releases/redis-${REDIS_VERSION}.tar.gz"
+  wget --continue --output-document "${CACHED_DOWNLOAD}" "https://github.com/antirez/redis/archive/${REDIS_VERSION}.tar.gz"
   tar -xaf "${CACHED_DOWNLOAD}" --strip-components=1 --directory "${HOME}/redis"
 
   (
